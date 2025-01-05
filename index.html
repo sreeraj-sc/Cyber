@@ -14,18 +14,22 @@
     />
     <link rel="stylesheet" href="login.css" />
     <style>
+      body {
+        font-size: 1.2rem;
+      }
+
       .profile-image {
         border: 8px solid #00ff00; /* Fluorescent green border */
         border-radius: 50%;
         box-shadow: 0 0 20px rgba(0, 255, 0, 0.6); /* Glowing effect */
-        width: 300px;
-        height: 300px;
+        width: 350px;
+        height: 350px;
       }
 
       @media (max-width: 768px) {
         .profile-image {
-          width: 150px;
-          height: 150px;
+          width: 200px;
+          height: 200px;
           border-width: 5px;
         }
         .display-4 {
@@ -42,7 +46,7 @@
       }
 
       .small-text {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
       }
 
       .btn-fluorescent-green {
@@ -85,10 +89,10 @@
 
       .navbar-nav {
         display: flex;
-        flex-direction: row; /* Make items horizontal */
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 1.5rem;
+        gap: 2rem;
       }
 
       .navbar-collapse {
@@ -101,17 +105,21 @@
         display: none;
       }
 
-      .collapse.show ~ .container {
-        margin-top: 0; /* Reduce the gap between header and body */
+      .container {
+        margin-top: 0;
+      }
+
+      .header-content {
+        gap: 1rem;
       }
     </style>
   </head>
   <body>
     <!-- Header -->
     <header class="bg-dark text-white py-3">
-      <div class="container">
+      <div class="container d-flex flex-column header-content">
         <div class="d-flex justify-content-between align-items-center">
-          <h1 class="logo text-fluorescent-green" id="logo">sreeraj...</h1>
+          <h1 class="logo text-fluorescent-green h1" id="logo">Sreeraj...</h1>
           <button
             class="navbar-toggler d-md-none"
             type="button"
@@ -134,7 +142,7 @@
               <div></div>
             </span>
           </button>
-          <nav class="navbar-collapse collapse show" id="navbarNav">
+          <nav class="navbar-collapse collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a href="#" class="text-white text-decoration-none nav-link"
@@ -169,16 +177,18 @@
           <!-- Left Content -->
           <div class="col-md-6 mb-4">
             <h4 class="text-fluorescent-green">Hello, it's me</h4>
-            <h1 class="display-4 text-fluorescent-green">
-              <span>Sreeraj S Chandran</span><br />
+            <h1 class="display-3 text-fluorescent-green h1">
+              <b>Sreeraj S Chandran</b><br />
             </h1>
             <br />
             <h2 class="text-fluorescent-green small-text">
               Cyber Security Enthusiast
             </h2>
             <p class="text-fluorescent-green">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sit
-              corporis expedita!
+              I am a passionate cybersecurity enthusiast with hands-on
+              experience in network security and computer networking, currently
+              pursuing the Google Cybersecurity Professional Certification. My
+              background includes practical experience with CCNA and AWS Cloud.
             </p>
             <div
               class="d-flex gap-2 justify-content-center justify-content-md-start"
