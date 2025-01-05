@@ -87,24 +87,6 @@
         z-index: 1;
       }
 
-      .navbar-nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-      }
-
-      .navbar-collapse {
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .logo.hidden {
-        display: none;
-      }
-
       .container {
         margin-top: 0;
       }
@@ -118,17 +100,16 @@
     <!-- Header -->
     <header class="bg-dark text-white py-3">
       <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-          <h1 class="logo text-fluorescent-green" id="logo">sreeraj...</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand text-fluorescent-green" href="#">sreeraj...</a>
           <button
-            class="navbar-toggler d-md-none"
+            class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            onclick="toggleLogo()"
           >
             <span class="navbar-toggler-icon">
               <div></div>
@@ -142,24 +123,36 @@
               <div></div>
             </span>
           </button>
-          <nav class="collapse navbar-collapse d-md-flex gap-3" id="navbarNav">
-            <a href="#" class="text-white text-decoration-none">Home ></a>
-            <a href="#" class="text-white text-decoration-none">About ></a>
-            <a href="#" class="text-white text-decoration-none">Service ></a>
-            <a href="#" class="text-white text-decoration-none"
-              >Certifications ></a
-            >
-            <a href="#" class="text-white text-decoration-none">Badges ></a>
-            <a href="#" class="text-white text-decoration-none">Contact ></a>
-          </nav>
-        </div>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Service</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Certifications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Badges</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </header>
+
     <!-- Main Content -->
     <section class="Home bg-dark vh-100 d-flex align-items-center">
       <div class="container text-center text-md-start">
         <div class="row align-items-center justify-content-center">
-          <!-- Left Content -->
           <div class="col-md-6 mb-4">
             <h4 class="text-fluorescent-green">Hello, it's me</h4>
             <h1 class="display-3 text-fluorescent-green h1">
@@ -171,9 +164,7 @@
             </h2>
             <p class="text-fluorescent-green">
               I am a passionate cybersecurity enthusiast with hands-on
-              experience in network security and computer networking, currently
-              pursuing the Google Cybersecurity Professional Certification. My
-              background includes practical experience with CCNA and AWS Cloud.
+              experience in network security and computer networking.
             </p>
             <div
               class="d-flex gap-2 justify-content-center justify-content-md-start"
@@ -187,51 +178,19 @@
               >
             </div>
           </div>
-          <!-- Right Content -->
           <div
             class="col-md-6 d-flex flex-column align-items-center position-relative"
           >
-            <!-- Round Image -->
             <img
               src="hacker.png"
               alt="Profile Picture"
               class="rounded-circle img-fluid mb-3 profile-image"
             />
-            <!-- Social Media Icons -->
-            <div
-              class="d-flex flex-column gap-3 position-absolute"
-              style="top: 50%; right: 0; transform: translateY(-50%)"
-            >
-              <a
-                href="https://www.linkedin.com/in/sreerajsc/"
-                class="social-icon fs-3"
-              >
-                <i class="fa-brands fa-linkedin"></i>
-              </a>
-              <a href="https://github.com/sreeraj-sc" class="social-icon fs-3">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a href="https://x.com/Sreerajsc5" class="social-icon fs-3">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/nebularoot/?igsh=MW8zMmI4dzBsN3c4OQ%3D%3D"
-                class="social-icon fs-3"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      function toggleLogo() {
-        const logo = document.getElementById("logo");
-        logo.classList.toggle("hidden");
-      }
-    </script>
   </body>
 </html>
