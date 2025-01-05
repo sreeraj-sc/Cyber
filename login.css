@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+
+body{
+  min-height: 100vh;
+  background:url(bac-img.png) ;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 20px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+header .logo{
+  font-size: 45px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #13ff00;
+}
+header nav{
+  margin-left: 50px;
+}
+header nav a{
+  position: relative;
+  font-size:19px ;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-left:  20px;
+  padding: 8px;
+  color: #fff;
+  letter-spacing: .8px;
+  transition: .3s ease-in-out;
+  border-bottom: solid transparent 3px;
+}
+
+header nav a:hover{
+  color: #13ff00;
+  border-bottom: solid #13ff00 3px;
+}
+
+.icon a{
+  font-size: 22px;
+  color: #fff;
+  margin-right: 15px;
+  transition: .3s;
+}
+
+.icon a:hover{
+  color: #13ff00;
+}
+
+section{
+  padding: 4% 6% 0;
+}
+
+.Home{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.Home .content h4{
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  font-style: italic;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.Home .content h1{
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.content h1 span{
+  font-size: 62px;
+  font-weight: 700;
+  color: #13ff00;
+}
+.content h1 span{
+  font-size: 62px;
+  font-weight: 700;
+  color: #13ff00;
+}
+.content p{
+  font-size: 17px;
+  color: #eee;
+  line-height: 1.8;
+  margin: 20px 0 35px;
+  
+}
+
+.Home .button a{
+  display: inline-block;
+  padding: 10px 30px;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 22px;
+  border: solid 2px #eee;
+  border-radius: 10px;
+  margin-right: 20px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.Home .button .btn2{
+  background-color: #13ff00;
+  border: #13ff00 solid 2px;
+  color:#202020 ;
+}
+
+.Home .social{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.Home .social a{
+  color: #fff;
+  font-size: 20px;
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  border: solid #fff 2px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: .3s ease;
+  box-shadow: 0 0 10px #fff;
+}
+.Home .social a:hover{
+  transform: scale(1.1);
+}
+
+

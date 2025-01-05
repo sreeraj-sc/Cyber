@@ -78,29 +78,31 @@
         border-radius: 50%;
       }
 
-      @media (max-width: 768px) {
-        .col-md-6:nth-child(2) {
-          order: -1; /* Move image above text */
-        }
-        .logo {
-          position: absolute;
-          top: 10%;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 2;
-        }
-        .navbar-collapse {
-          position: relative;
-          padding: 1rem;
-        }
+      header {
+        position: relative;
+        z-index: 1;
       }
 
-      .collapse.show ~ .container {
-        margin-top: 10rem;
+      .navbar-nav {
+        display: flex;
+        flex-direction: row; /* Make items horizontal */
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .navbar-collapse {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
       }
 
       .logo.hidden {
         display: none;
+      }
+
+      .collapse.show ~ .container {
+        margin-top: 0; /* Reduce the gap between header and body */
       }
     </style>
   </head>
@@ -132,11 +134,29 @@
               <div></div>
             </span>
           </button>
-          <nav class="collapse navbar-collapse d-md-flex gap-3" id="navbarNav">
-            <a href="#" class="text-white text-decoration-none">Home</a>
-            <a href="#" class="text-white text-decoration-none">About</a>
-            <a href="#" class="text-white text-decoration-none">Service</a>
-            <a href="#" class="text-white text-decoration-none">Contact</a>
+          <nav class="navbar-collapse collapse show" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="#" class="text-white text-decoration-none nav-link"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="text-white text-decoration-none nav-link"
+                  >About</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="text-white text-decoration-none nav-link"
+                  >Service</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="text-white text-decoration-none nav-link"
+                  >Contact</a
+                >
+              </li>
+            </ul>
           </nav>
         </div>
       </div>
