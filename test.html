@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTB Rank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #121212;
+            color: white;
+        }
+        .htb-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        img {
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .rank-info {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="htb-container">
+        <h1>Hack The Box Profile</h1>
+        <img src="https://www.hackthebox.com/badge/image/2028128" alt="HTB Badge">
+        <p id="htb-rank" class="rank-info">Fetching rank...</p>
+    </div>
+
+    <script>
+        async function fetchHTBRank() {
+            try {
+                const response = await fetch("https://www.hackthebox.com/api/v4/profile/2028128");
+                const data = await response.json();
+
+                document.getElementById("htb-rank").innerText = `HTB Rank: ${data.rank} | Points: ${data.points}`;
+            } catch (error) {
+                console.error("Error fetching HTB data:", error);
+                document.getElementById("htb-rank").innerText = "Failed to fetch HTB rank.";
+            }
+        }
+
+        fetchHTBRank();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+:root {
+  --primary-color: #9fef00;
+  --secondary-color: #a4b1cd;
+  --bg-color: #0a0a0a;
+  --card-bg: #1a2332;
+  --terminal-border: #2a3b52;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--secondary-color);
+  font-family: 'Courier New', monospace;
+  padding-top: 80px;
+}
+
+.terminal-header {
+  background: rgba(10, 16, 27, 0.95);
+  border-bottom: 2px solid var(--terminal-border);
+}
+
+.logo {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: var(--secondary-color) !important;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(45deg, #0a0a0a 0%, #0f1923 100%);
+}
+
+.profile-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.social-icons {
+  margin: 2rem 0;
+}
+
+.social-icons a {
+  color: var(--primary-color);
+  font-size: 1.75rem;
+  margin: 0 1rem;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+.btn-terminal {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-terminal:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(159, 239, 0, 0.3);
+}
+
+.btn-outline-terminal {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+  padding: 1rem 2rem;
+}
+
+.btn-outline-terminal:hover {
+  background: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.skill-card,
+.experience-card,
+.education-card,
+.service-card,
+.badge-card {
+  background: var(--card-bg);
+  border: 1px solid var(--terminal-border);
+  border-radius: 10px;
+  padding: 2rem;
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.skill-card:hover,
+.experience-card:hover,
+.education-card:hover,
+.service-card:hover,
+.badge-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+#contactForm .form-control {
+  background: var(--card-bg);
+  border: 1px solid var(--terminal-border);
+  color: var(--secondary-color);
+}
+
+#contactForm .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .profile-img {
+      width: 200px;
+      height: 200px;
+  }
+  
+  .hero {
+      padding-top: 100px;
+      text-align: center;
+  }
+}
