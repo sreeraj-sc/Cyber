@@ -89,6 +89,47 @@ body {
   background: var(--primary-color);
   color: var(--bg-color);
 }
+/* Add to your CSS file */
+/* Badges Section Fixes */
+.badge-card {
+  height: 350px; /* Fixed height for consistency */
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-iframe-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.badge-iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.badge-image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-image-container img {
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+/* Contact Form Improvements */
+#contactForm .form-control::placeholder {
+  color: #6c757d;
+  opacity: 0.8;
+}
+
+#contactForm .form-control:focus::placeholder {
+  color: transparent;
+}
 
 .skill-card,
 .experience-card,

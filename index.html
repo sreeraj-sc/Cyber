@@ -147,16 +147,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5"><h2>$ badges</h2></div>
+                <!-- TryHackMe Badge -->
                 <div class="col-md-6 mb-4">
                     <div class="badge-card">
                         <h3><i class="fas fa-trophy"></i> TryHackMe</h3>
-                        <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1184171" style="border:none;height:200px;"></iframe>
+                        <div class="badge-iframe-container">
+                            <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1184171"></iframe>
+                        </div>
                     </div>
                 </div>
+                <!-- HackTheBox Badge -->
                 <div class="col-md-6 mb-4">
                     <div class="badge-card">
                         <h3><i class="fas fa-trophy"></i> HackTheBox</h3>
-                        <img src="https://www.hackthebox.com/badge/image/2028128" alt="HTB Badge" style="height:200px;">
+                        <div class="badge-image-container">
+                            <img src="https://www.hackthebox.com/badge/image/2028128" alt="HTB Badge">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -175,26 +181,31 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5"><h2>$ contact</h2></div>
-                <div class="col-md-6 mx-auto">
-                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-                        <div class="mb-3">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-terminal">Send Message</button>
-                    </form>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5"><h2>$ contact</h2></div>
+            <div class="col-md-6 mx-auto">
+                <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                    <div class="mb-3">
+                        <input type="text" name="name" class="form-control" 
+                               placeholder="Enter your full name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" class="form-control" 
+                               placeholder="Your email address" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" class="form-control" rows="5" 
+                                  placeholder="Type your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-terminal w-100">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
