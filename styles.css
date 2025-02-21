@@ -6,6 +6,7 @@
   --terminal-border: #2a3b52;
 }
 
+/* Base Styles */
 body {
   background-color: var(--bg-color);
   color: var(--secondary-color);
@@ -13,9 +14,11 @@ body {
   padding-top: 80px;
 }
 
+/* Header */
 .terminal-header {
   background: rgba(10, 16, 27, 0.95);
   border-bottom: 2px solid var(--terminal-border);
+  backdrop-filter: blur(5px);
 }
 
 .logo {
@@ -33,11 +36,12 @@ body {
   color: var(--primary-color) !important;
 }
 
+/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(45deg, #0a0a0a 0%, #0f1923 100%);
+  background: linear-gradient(45deg, var(--bg-color) 0%, #0f1923 100%);
 }
 
 .profile-img {
@@ -56,7 +60,7 @@ body {
   color: var(--primary-color);
   font-size: 1.75rem;
   margin: 0 1rem;
-  transition: transform 0.3s;
+  transition: all 0.3s;
 }
 
 .social-icons a:hover {
@@ -64,6 +68,7 @@ body {
   transform: translateY(-3px);
 }
 
+/* Buttons */
 .btn-terminal {
   background-color: var(--primary-color);
   color: var(--bg-color);
@@ -83,59 +88,22 @@ body {
   color: var(--primary-color);
   background: transparent;
   padding: 1rem 2rem;
+  transition: all 0.3s;
 }
 
 .btn-outline-terminal:hover {
   background: var(--primary-color);
   color: var(--bg-color);
 }
-/* Add to your CSS file */
-/* Badges Section Fixes */
-.badge-card {
-  height: 350px; /* Fixed height for consistency */
-  display: flex;
-  flex-direction: column;
-}
 
-.badge-iframe-container {
-  flex: 1;
-  overflow: hidden;
-}
-
-.badge-iframe-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.badge-image-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.badge-image-container img {
-  max-width: 100%;
-  max-height: 250px;
-  object-fit: contain;
-}
-
-/* Contact Form Improvements */
-#contactForm .form-control::placeholder {
-  color: #6c757d;
-  opacity: 0.8;
-}
-
-#contactForm .form-control:focus::placeholder {
-  color: transparent;
-}
-
+/* Cards */
 .skill-card,
 .experience-card,
 .education-card,
 .service-card,
-.badge-card {
+.badge-card,
+.certificate-card,
+.ctf-badge {
   background: var(--card-bg);
   border: 1px solid var(--terminal-border);
   border-radius: 10px;
@@ -148,208 +116,85 @@ body {
 .experience-card:hover,
 .education-card:hover,
 .service-card:hover,
-.badge-card:hover {
-  border-color: var(--primary-color);
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-#contactForm .form-control {
-  background: var(--card-bg);
-  border: 1px solid var(--terminal-border);
-  color: var(--secondary-color);
-}
-
-#contactForm .form-control:focus {
-  border-color: var(--primary-color);
-  box-shadow: none;
-}
-
-@media (max-width: 768px) {
-  .profile-img {
-      width: 200px;
-      height: 200px;
-  }
-  
-  .hero {
-      padding-top: 100px;
-      text-align: center;
-  }
-}
-
-/* Add to styles.css */
-/* Certifications Section */
-.certificate-card {
-  background: var(--card-bg);
-  border: 1px solid var(--terminal-border);
-  border-radius: 10px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: all 0.3s;
-}
-
-.certificate-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary-color);
-}
-
-.certificate-thumbnail {
-  height: 200px;
-  overflow: hidden;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-}
-
-.certificate-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Add to styles.css */
-/* Badge Alignment Fixes */
-.badge-card {
-  height: 350px;
-  display: flex;
-  flex-direction: column;
-}
-
-.badge-iframe-container {
-  flex: 1;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.badge-iframe-container iframe {
-  width: 100%;
-  height: 250px;
-  border: none !important;
-}
-
-.badge-image-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.clickable-badge {
-  max-width: 100%;
-  max-height: 200px;
-  object-fit: contain;
-  transition: transform 0.3s;
-}
-
-.badge-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.badge-link:hover .clickable-badge {
-  transform: scale(1.05);
-}
-
-.badge-link:hover .badge-card {
-  border-color: var(--primary-color);
-}
-/* Add these styles */
-/* Platform Badges */
-.platform-badge {
-  background: transparent;
-  border: none;
-  padding: 0;
-}
-
-.badge-iframe-container iframe {
-  width: 100%;
-  height: 250px;
-  border: none !important;
-}
-
-.hackthebox-badge {
-  max-width: 100%;
-  height: 250px;
-  object-fit: contain;
-}
-
-/* CTF Badges */
-.ctf-title {
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--terminal-border);
-  padding-bottom: 1rem;
-  margin-top: 2rem;
-}
-
-.ctf-badge {
-  background: var(--card-bg);
-  border: 1px solid var(--terminal-border);
-  border-radius: 10px;
-  padding: 1.5rem;
-  transition: all 0.3s;
-  height: 100%;
-}
-
+.badge-card:hover,
+.certificate-card:hover,
 .ctf-badge:hover {
   border-color: var(--primary-color);
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.ctf-badge-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.ctf-image-container {
-  height: 150px;
+/* TryHackMe Badge Container */
+.platform-badge {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-iframe-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden !important;
+  border-radius: 10px;
+  display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--terminal-border);
 }
 
-.ctf-badge-img {
-  max-width: 100%;
-  max-height: 150px;
-  object-fit: contain;
+.platform-iframe {
+  width: calc(100% + 20px); /* Compensate for hidden overflow */
+  height: calc(100% + 20px);
+  border: none;
+  margin: -10px; /* Counteract extra width/height */
+  display: block;
 }
 
-.ctf-info {
-  text-align: center;
+.stats-box {
+  background: var(--card-bg);
+  border: 1px solid var(--terminal-border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
 }
 
-.ctf-info h4 {
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.stat-label {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.stat-value {
   color: var(--primary-color);
-  margin-bottom: 0.5rem;
+  font-family: monospace;
 }
 
-.ctf-info p {
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-/* CTF Section Styles */
+/* CTF Badges Section */
 .ctf-title {
   color: var(--primary-color);
   border-bottom: 2px solid var(--terminal-border);
   padding-bottom: 0.5rem;
   display: inline-block;
+  margin: 3rem 0 2rem;
 }
 
 .ctf-badge {
-  background: var(--card-bg);
-  border: 1px solid var(--terminal-border);
-  border-radius: 10px;
   padding: 1.5rem;
-  transition: all 0.3s;
-  height: 100%;
-}
-
-.ctf-badge:hover {
-  border-color: var(--primary-color);
-  transform: translateY(-5px);
+  text-align: center;
 }
 
 .ctf-image {
@@ -357,10 +202,6 @@ body {
   height: 150px;
   object-fit: contain;
   margin-bottom: 1rem;
-}
-
-.ctf-info {
-  text-align: center;
 }
 
 .ctf-info h4 {
@@ -377,4 +218,67 @@ body {
 .ctf-link {
   text-decoration: none;
   color: inherit;
+  display: block;
+  height: 100%;
+}
+
+/* Contact Form */
+#contactForm .form-control {
+  background: var(--card-bg);
+  border: 1px solid var(--terminal-border);
+  color: var(--secondary-color);
+}
+
+#contactForm .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: none;
+}
+
+#contactForm .form-control::placeholder {
+  color: #6c757d;
+  opacity: 0.8;
+}
+
+#contactForm .form-control:focus::placeholder {
+  color: transparent;
+}
+
+/* Certifications */
+.certificate-thumbnail {
+  height: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.certificate-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero {
+    padding-top: 100px;
+    text-align: center;
+  }
+
+  .platform-badge {
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .badge-iframe-container {
+    height: 200px;
+  }
+
+  .stats-box {
+    max-width: 100%;
+  }
 }
