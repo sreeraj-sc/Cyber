@@ -59,3 +59,20 @@ document.addEventListener('DOMContentLoaded', () => {
     type();
     fetchMediumBlog();
 });
+
+// Google Sheets Form Submission
+const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+const form = document.forms['contactForm'];
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+        alert('Message sent successfully!');
+        form.reset();
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        alert('Something went wrong. Please try again.');
+    });
+});
