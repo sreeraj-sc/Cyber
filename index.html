@@ -430,45 +430,41 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5"><h2>$ Contact</h2></div>
-                <div class="col-md-6 mx-auto">
-                    <form id="contactForm" action="https://formspree.io/f/xldgkqbp" method="POST">
-                        <!-- Hidden IP Info Fields -->
-                        <input type="hidden" name="user_ip" id="userIp">
-                        <input type="hidden" name="city" id="city">
-                        <input type="hidden" name="region" id="region">
-                        <input type="hidden" name="country" id="country">
-                        <input type="hidden" name="org" id="org">
-                        <input type="hidden" name="postal" id="postal">
-                        
-                        <!-- Visible Form Fields -->
-                        <div class="mb-3">
-                            <input type="text" name="name" class="form-control" 
-                                   placeholder="Enter your full name" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" name="email" class="form-control" 
-                                   placeholder="Your email address" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea name="message" class="form-control" rows="5" 
-                                      placeholder="Type your message here..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-terminal w-100">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
-                    <!-- Success Message -->
-                    <div id="successMessage" class="alert alert-success mt-3 d-none">
-                        Message sent successfully!
+<section id="contact" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5"><h2>$ Contact</h2></div>
+            <div class="col-md-6 mx-auto">
+                <form id="contactForm" action="https://formspree.io/f/xldgkqbp" method="POST">
+                    <!-- Hidden IP Info Fields -->
+                    <input type="hidden" name="user_ip" id="userIp">
+                    <input type="hidden" name="city" id="city">
+                    <input type="hidden" name="region" id="region">
+                    <input type="hidden" name="country" id="country">
+                    <input type="hidden" name="org" id="org">
+                    <input type="hidden" name="postal" id="postal">
+                    
+                    <!-- Visible Form Fields -->
+                    <div class="mb-3">
+                        <input type="text" name="name" class="form-control" 
+                               placeholder="Enter your full name" required>
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" class="form-control" 
+                               placeholder="Your email address" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" class="form-control" rows="5" 
+                                  placeholder="Type your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-terminal w-100">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <!-- Link to external JavaScript -->
 <script src="contact.js"></script>

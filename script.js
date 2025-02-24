@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
 
     // Fetch IP information
     fetch('https://ipinfo.io/json?token=76bc874c8ff86c')
@@ -94,18 +93,15 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => {
             if (response.ok) {
-                // Show success message
-                successMessage.classList.remove('d-none');
+                // Show alert box
+                alert('Message sent successfully!');
                 // Reset form
                 form.reset();
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    successMessage.classList.add('d-none');
-                }, 5000);
             }
         })
         .catch(error => {
             console.error('Error:', error);
+            alert('There was an error sending your message. Please try again.');
         });
     });
 });
