@@ -61,6 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
     // Fetch IP information
     fetch('https://ipinfo.io/json?token=76bc874c8ff86c')
         .then(response => response.json())
@@ -77,9 +80,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     // Handle form submission
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
-        // You can add additional submission handling here if needed
-        this.submit();
+        
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Show success message
+                successMessage.classList.remove('d-none');
+                // Reset form
+                form.reset();
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.add('d-none');
+                }, 5000);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     });
 });
