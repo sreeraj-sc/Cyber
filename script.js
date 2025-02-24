@@ -60,19 +60,51 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchMediumBlog();
 });
 
-// Google Sheets Form Submission
-const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
-const form = document.forms['contactForm'];
+const scriptURL = 'https://script.google.com/macros/s/AKfycbySz4dqg3xLz_DDIVH7qiiim2zSyhPwZ5k2_8Cl7bOPYUbQnxVwqUZlGCVPyjsE4rca/exec';
+const form = document.getElementById('contactForm');
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => {
+
+    try {
+        // Fetch user IP details from IPinfo
+        const ipResponse = await fetch(`https://ipinfo.io/json?token=76bc874c8ff86c`);
+        if (!ipResponse.ok) throw new Error("IPinfo API request failed");
+        const ipData = await ipResponse.json();
+
+        // Prepare data to send
+        const formData = {
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value,
+            ip: ipData.ip,
+            hostname: ipData.hostname || "N/A",
+            city: ipData.city,
+            region: ipData.region,
+            country: ipData.country,
+            loc: ipData.loc,
+            org: ipData.org,
+            postal: ipData.postal,
+            timezone: ipData.timezone
+        };
+
+        console.log("Sending data:", formData); // Debugging step
+
+        // Send data to Google Apps Script
+        const response = await fetch(scriptURL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        console.log("Response status:", response.status); // Debugging step
+
+        if (!response.ok) throw new Error("Failed to submit form");
+
         alert('Message sent successfully!');
         form.reset();
-    })
-    .catch(error => {
-        console.error('Error!', error.message);
-        alert('Something went wrong. Please try again.');
-    });
+    } catch (error) {
+        console.error('Submission error:', error.message);
+        alert(`Something went wrong: ${error.message}`);
+    }
 });
