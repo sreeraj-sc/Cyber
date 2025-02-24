@@ -60,50 +60,26 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchMediumBlog();
 });
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbySz4dqg3xLz_DDIVH7qiiim2zSyhPwZ5k2_8Cl7bOPYUbQnxVwqUZlGCVPyjsE4rca/exec';
-const form = document.getElementById('contactForm');
-
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    try {
-        // Fetch user IP details from IPinfo
-        const ipResponse = await fetch(`https://ipinfo.io/json?token=76bc874c8ff86c`);
-        const ipData = await ipResponse.json();
-
-        // Prepare data to send
-        const formData = {
-            name: form.name.value,
-            email: form.email.value,
-            message: form.message.value,
-            ip: ipData.ip,
-            hostname: ipData.hostname || "N/A",
-            city: ipData.city,
-            region: ipData.region,
-            country: ipData.country,
-            loc: ipData.loc,
-            org: ipData.org,
-            postal: ipData.postal,
-            timezone: ipData.timezone
-        };
-
-        console.log("Sending data:", formData); // Debugging step
-
-        // Send data to Google Apps Script
-        const response = await fetch(scriptURL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
+document.addEventListener('DOMContentLoaded', function() {
+    // Fetch IP information
+    fetch('https://ipinfo.io/json?token=76bc874c8ff86c')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('userIp').value = data.ip;
+            document.getElementById('city').value = data.city;
+            document.getElementById('region').value = data.region;
+            document.getElementById('country').value = data.country;
+            document.getElementById('org').value = data.org;
+            document.getElementById('postal').value = data.postal;
+        })
+        .catch(error => {
+            console.error('Error fetching IP info:', error);
         });
 
-        console.log("Response status:", response.status); // Debugging step
-
-        if (!response.ok) throw new Error("Failed to submit form");
-
-        alert('Message sent successfully!');
-        form.reset();
-    } catch (error) {
-        console.error('Submission error:', error.message);
-        alert(`Something went wrong: ${error.message}`);
-    }
+    // Handle form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // You can add additional submission handling here if needed
+        this.submit();
+    });
 });
