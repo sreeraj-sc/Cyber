@@ -69,7 +69,6 @@ form.addEventListener('submit', async (e) => {
     try {
         // Fetch user IP details from IPinfo
         const ipResponse = await fetch(`https://ipinfo.io/json?token=76bc874c8ff86c`);
-        if (!ipResponse.ok) throw new Error("IPinfo API request failed");
         const ipData = await ipResponse.json();
 
         // Prepare data to send
