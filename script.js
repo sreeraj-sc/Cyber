@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             console.error('Error fetching IP info:', error);
         });
-
+/*
     // Handle form submission
     form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -105,3 +105,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+*/
